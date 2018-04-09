@@ -59,8 +59,8 @@ i-screen에서 적립한 포인트를 매체의 포인트로 전환하게 되는
 
 ```java
 private BroadcastReceiver mAppPointChangeReceiver = new BroadcastReceiver() {
-	@Override
-	public void onReceive(Context context, Intent intent) {
+    @Override
+    public void onReceive(Context context, Intent intent) {
         //변환한 매체 포인트 : 기존 포인트에서 아래 값을 더해주면 됩니다.
         int addingAppPoint = IScreen.getAddingAppPoint(context, intent);
     }
