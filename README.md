@@ -62,7 +62,7 @@ private BroadcastReceiver mAppPointChangeReceiver = new BroadcastReceiver() {
 	@Override
 	public void onReceive(Context context, Intent intent) {
         //변환한 매체 포인트 : 기존 포인트에서 아래 값을 더해주면 됩니다.
-		int addingAppPoint = IScreen.getAddingAppPoint(context, intent);
+        int addingAppPoint = IScreen.getAddingAppPoint(context, intent);
     }
 };
 ```
@@ -73,7 +73,7 @@ private BroadcastReceiver mAppPointChangeReceiver = new BroadcastReceiver() {
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-	LocalBroadcastManager.getInstance(this).registerReceiver(mAppPointChangeReceiver, new IntentFilter("kr.ive.iscreen.action.app_point_change_complete"));    
+    LocalBroadcastManager.getInstance(this).registerReceiver(mAppPointChangeReceiver, new IntentFilter("kr.ive.iscreen.action.app_point_change_complete"));    
 }
 ```
 등록을 할 때 액션 값은 반드시 `"kr.ive.iscreen.action.app_point_change_complete"`을 사용해야 합니다.
@@ -83,8 +83,8 @@ protected void onCreate(Bundle savedInstanceState) {
 ```java
 @Override
 protected void onDestroy() {
-	super.onDestroy();
-	LocalBroadcastManager.getInstance(this).unregisterReceiver(mAppPointChangeReceiver);
+    super.onDestroy();
+    LocalBroadcastManager.getInstance(this).unregisterReceiver(mAppPointChangeReceiver);
 }
 ```
 
